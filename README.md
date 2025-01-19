@@ -11,7 +11,6 @@ By default will just hook NtQueryVirtualMemory to return 0 instead of access vio
         return address: 0x7ffb8294d2b4
 
 [SHOOK] NtQueryVirtualMemory - Modified callback: 0x0
-Hello, world!!
 ```
 
 Files and imports used as dependencies in other projects and require very few changes to be compatible with `no_std`

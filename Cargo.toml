@@ -1,5 +1,5 @@
 [package]
-name = "sys_hook"
+name = "rs_sys_hook"
 version = "0.1.0"
 edition = "2021"
 
