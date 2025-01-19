@@ -1,0 +1,29 @@
+[package]
+name = "sys_hook"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libc-print = "0.1.23"
+obfstr = "=0.2.5"
+
+
+[build-dependencies]
+rand = "0.8.5"
+cc = "1.0"
+
+[dependencies.windows-sys]
+version = "0.59.0"
+features = [
+    "Win32",
+    "Win32_System",
+    "Win32_System_Threading",
+    "Win32_System_Kernel",
+    "Win32_System_WindowsProgramming",
+    "Win32_System_Diagnostics",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_SystemInformation",
+    "Win32_System_SystemServices",
+    "Win32_System_Memory"
+]
+
