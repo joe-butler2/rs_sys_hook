@@ -59,7 +59,7 @@ unsafe extern "C" fn hook(r10: usize, mut rax: usize) -> usize {
             &mut displacement,
             &mut symbol_info
         );
-        if let Some(true) = ret {
+        if ret == Some(true) {
             if HOOKED.contains(&(symbol_info.Address as usize)) {
                 // printf("[+] function: %s\n\treturn value: 0x%llx\n\treturn address: 0x%llx\n", symbol_info->Name, RAX, R10);
                 libc_println!(
