@@ -32,12 +32,12 @@ unsafe extern "C" fn hook(r10: usize, mut rax: usize) -> usize {
     // This flag is there for prevent recursion
     if !FLAG {
         FLAG = true;
-        const SYNBOL_INFO_SIZE: usize = mem::size_of::<SYMBOL_INFO>();
+        const SYMBOL_INFO_SIZE: usize = mem::size_of::<SYMBOL_INFO>();
         const MAX_SYM_NAME_SIZE: u32 = MAX_SYM_NAME;
-        let buffer: [u8; SYNBOL_INFO_SIZE] = [0; SYNBOL_INFO_SIZE];
+        let buffer: [u8; SYMBOL_INFO_SIZE] = [0; SYMBOL_INFO_SIZE];
         //cast buffer to SYMBOL_INFO
         let mut symbol_info: SYMBOL_INFO = mem::transmute(buffer);
-        symbol_info.SizeOfStruct = SYNBOL_INFO_SIZE as u32;
+        symbol_info.SizeOfStruct = SYMBOL_INFO_SIZE as u32;
         symbol_info.MaxNameLen = MAX_SYM_NAME_SIZE;
         let dbg_help = get_module_base_addr("dbghelp.dll");
         let sym_from_addr_templ: unsafe extern "system" fn(
